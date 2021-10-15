@@ -10,7 +10,7 @@ test = pd.read_csv('test_public.csv')
 
 ### 数据预处理
 # In[3]:
-train_bank.rename(columns={'isDefault': 'is_default'}, inplace=True)
+train_internet.rename(columns={'is_default': 'isDefault'}, inplace=True)
 common_cols = []
 for col in train_bank.columns:
     if col in train_internet.columns:
@@ -110,10 +110,10 @@ test_data['employer_type'] = test_data['employer_type'].map(emp_type_dict)
 test_data['industry'] = test_data['industry'].map(industry_dict)
 
 # In[13]:combine the data
-X_train1 = train1_data.drop(['is_default','earlies_credit_mon','loan_id','user_id'], axis = 1, inplace = False)
-y_train1 = train1_data['is_default']
-X_train2 = train2_data.drop(['is_default','earlies_credit_mon','loan_id','user_id'], axis = 1, inplace = False)
-y_train2 = train2_data['is_default']
+X_train1 = train1_data.drop(['isDefault','earlies_credit_mon','loan_id','user_id'], axis = 1, inplace = False)
+y_train1 = train1_data['isDefault']
+X_train2 = train2_data.drop(['isDefault','earlies_credit_mon','loan_id','user_id'], axis = 1, inplace = False)
+y_train2 = train2_data['isDefault']
 
 X_train_all = pd.concat([X_train1, X_train2]) ##总训练集
 y_train_all = pd.concat([y_train1, y_train2]) ##总训练集的分类结果

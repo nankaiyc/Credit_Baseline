@@ -87,5 +87,5 @@ print(len(pred_NN))
 
 
 # model.save('NN_model.h5')
-# submission = pd.DataFrame({'id':test['loan_id'], 'is_default':pred_NN})
+# submission = pd.DataFrame({'id':test['loan_id'], 'isDefault':pred_NN})
 # submission.to_csv('submission2.csv', index = None)

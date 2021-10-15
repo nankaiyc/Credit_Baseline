@@ -13,5 +13,5 @@ pred = clf_ex.predict(X_test)
 
 # In[17]:
 # submission
-submission = pd.DataFrame({'id':test['loan_id'], 'is_default':pred})
+submission = pd.DataFrame({'id':test['loan_id'], 'isDefault':pred})
 submission.to_csv('submission.csv', index = None)
